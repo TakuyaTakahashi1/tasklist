@@ -19,6 +19,7 @@ import javax.persistence.Table;
     @NamedQuery(
         name = "getAllMessages",
         query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
+        //JPQLだとSELECT　＊　がSELECT　m　になる
     )
 })
 
