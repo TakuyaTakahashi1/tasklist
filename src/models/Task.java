@@ -14,18 +14,15 @@ import javax.persistence.Table;
 
 
 @Entity
-
 @NamedQueries({
     @NamedQuery(
         name = "getAllMessages",
-        query = "SELECT m FROM Message AS m ORDER BY m.id DESC"
+        query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
         //JPQLだとSELECT　＊　がSELECT　m　になる
     )
 })
-
-
-@Table(name = "messages")
-public class Message {
+@Table(name = "tasks")
+public class Task {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -58,14 +55,6 @@ public class Message {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    /*public String getContent() {
-        return content;
-    }*/
-
-    /*public void setContent(String content) {
-        this.content = content;
-    }*/
 
     public Timestamp getCreated_at() {
         return created_at;
